@@ -6,6 +6,6 @@ import com.santander.ademma.common.handler.httpclient.GenericClientErrorHandler;
  * Handler for RestTemplate errors.
  *
  */
-public class LoanEnquiryClientErrorHandler extends GenericClientErrorHandler {
+public class RepresentativesClientErrorHandler extends GenericClientErrorHandler {
 
 }

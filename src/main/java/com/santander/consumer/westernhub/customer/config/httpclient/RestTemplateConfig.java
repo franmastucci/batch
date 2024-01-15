@@ -1,7 +1,7 @@
 package com.santander.consumer.westernhub.customer.config.httpclient;
 
-import com.santander.consumer.westernhub.customer.handler.httpclient.LoanEnquiryClientErrorHandler;
-import com.santander.consumer.westernhub.customer.handler.httpclient.LoanEnquiryClientHttpRequestInterceptor;
+import com.santander.consumer.westernhub.customer.handler.httpclient.RepresentativesClientErrorHandler;
+import com.santander.consumer.westernhub.customer.handler.httpclient.RepresentativesClientHttpRequestInterceptor;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -59,8 +59,8 @@ public class RestTemplateConfig {
     @Qualifier("restTemplate")
     public RestTemplate restTemplate(@Autowired RestTemplateBuilder restTemplateBuilder) {
         return restTemplateBuilder.requestFactory(this::clientHttpRequestFactory)
-                .errorHandler(new LoanEnquiryClientErrorHandler())
-                .interceptors(new LoanEnquiryClientHttpRequestInterceptor()).build();
+                .errorHandler(new RepresentativesClientErrorHandler())
+                .interceptors(new RepresentativesClientHttpRequestInterceptor()).build();
     }
 
     /**

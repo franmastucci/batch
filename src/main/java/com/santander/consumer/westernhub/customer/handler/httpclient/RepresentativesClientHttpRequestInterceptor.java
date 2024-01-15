@@ -6,6 +6,6 @@ import com.santander.ademma.common.handler.httpclient.GenericClientHttpRequestIn
  * Interceptor of RestTemplate actions.
  *
  */
-public class LoanEnquiryClientHttpRequestInterceptor extends GenericClientHttpRequestInterceptor {
+public class RepresentativesClientHttpRequestInterceptor extends GenericClientHttpRequestInterceptor {
 
 }

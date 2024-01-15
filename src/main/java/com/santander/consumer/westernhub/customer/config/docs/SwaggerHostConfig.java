@@ -45,9 +45,9 @@ public class SwaggerHostConfig {
                                 )
                 )
                 .info(new Info()
-                        .title("Operations Genesys")
+                        .title("Representatives")
                         .version(version)
-                        .description("API to search data relative to loans")
+                        .description("API to search for data related to Representatives of a Dealer operation")
                         .license(new License().name("Apache 2.0").url("http://www.apache.org/licenses/LICENSE-2.0.html"))
                 );
     }

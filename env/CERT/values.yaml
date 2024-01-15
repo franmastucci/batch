@@ -4,7 +4,7 @@ image:
 
 microservice: ms-spb-wh-representatives
 namespace: generaltables
-path: /customers/ms-spb-wh-representatives
+path: /ms-spb-wh-representatives
 hostname: portal.sceu.dev.corp
 secret_name: portal.sceu.dev.corp
 https: true
@@ -24,7 +24,7 @@ configurationFiles:
       DATADOG: "true"
       CONFIG_URL_SPRINGDOC: "https://portal.sceu.dev.corp/ms-spb-wh-representatives/v3/api-docs"
       SPRINGDOC_URL: "/v3/api-docs/swagger-config"
-      HOST_PATH: "/customers/ms-spb-wh-representatives"
+      HOST_PATH: "/ms-spb-wh-representatives"
       URL_AS400: "https://s44c0718.scf.corp:40443"
 Secrets:
   - cwedsslkeystorepass

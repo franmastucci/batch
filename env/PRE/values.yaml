@@ -4,7 +4,7 @@ image:
 
 microservice: ms-spb-wh-representatives
 namespace: generaltables
-path: /customers/ms-spb-wh-representatives
+path: /ms-spb-wh-representatives
 hostname: portal.sceu.pre.corp
 secret_name: portal.sceu.pre.corp
 https: true
@@ -20,7 +20,7 @@ configurationFiles:
       SERVER_PORT: "8443"
       CONFIG_URL_SPRINGDOC: "https://portal.sceu.pre.corp/ms-spb-wh-representatives/v3/api-docs"
       SPRINGDOC_URL: "/v3/api-docs/swagger-config"
-      HOST_PATH: "//customers/ms-spb-wh-representatives"
+      HOST_PATH: "/ms-spb-wh-representatives"
       APP_VERSION: "SNAPSHOT-0.0.1"
       LOGGING_LEVEL_ROOT: "INFO"
       LOGGING_LEVEL_APPLICATION: "INFO"

@@ -32,10 +32,7 @@ public class ServicesUtils {
 
     /** The input format Representatives. */
     static DateTimeFormatter representativesInputDateFormatter = DateTimeFormatter.ofPattern(REPRESENTATIVES_INPUT_DATE_FORMAT);
-
-    /** The input format VariableInterest. */
-    static DateTimeFormatter variableIneterestInputDateFormatter = DateTimeFormatter.ofPattern(VARIABLE_INTEREST_INPUT_DATE_FORMAT);
-
+    
     /** The output format. */
     static DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern(OUTPUT_DATE_FORMAT);
 
@@ -87,8 +84,6 @@ public class ServicesUtils {
 
     }
 
-
-
     /**
      * Checks if is json valid.
      *
@@ -123,15 +118,6 @@ public class ServicesUtils {
     public static String representativesDateFormat(String dateString) {
         try {
             var date = LocalDate.parse(dateString, representativesInputDateFormatter);
-            return date.format(outputFormatter);
-        } catch (Exception e) {
-            return dateString;
-        }
-    }
-
-    public static String variableInterestDateFormat(String dateString) {
-        try {
-            var date = LocalDate.parse(dateString, variableIneterestInputDateFormatter);
             return date.format(outputFormatter);
         } catch (Exception e) {
             return dateString;
