@@ -1,0 +1,37 @@
+CERT:
+  certnode1:
+    NAMESPACE: 'generaltables'
+    CREDENTIALS: 'aws-credential-cwe-portal-dev-mg'
+    EKS_NAME: 'cwed1aireksaccwegene001'
+    EKS_REGION: 'eu-west-1'
+    ROLE_ARN: 'arn:aws:iam::737929421946:role/eks-namespace-portal'
+PRE:
+  prenode1:
+    NAMESPACE: 'generaltables'
+    CREDENTIALS: 'aws-credential-cwe-portal-pre'
+    EKS_NAME: 'cwei1aireksweglobgene001'
+    EKS_REGION: 'eu-west-1'
+    ROLE_ARN: 'arn:aws:iam::518822549288:role/eks-namespace-portal'
+PRO:
+  pronode1:
+    NAMESPACE: 'generaltables'
+    CREDENTIALS: 'aws-credential-cwe-portal-pro'
+    EKS_NAME: 'cwep1aireksweglobgene001'
+    EKS_REGION: 'eu-west-1'
+    ROLE_ARN: 'arn:aws:iam::852180292196:role/eks-namespace-portal' 
+REGISTRY:
+  CERT:
+    REGISTRY_URL: '737929421946.dkr.ecr.eu-west-1.amazonaws.com'
+    REPOSITORY: 'cwed1airecrportalgene001'
+    REGISTRY_CRED: 'REGISTRY_CREDS_AWS_DEV_MG'
+    REGISTRY_KMS: 'arn:aws:kms:eu-west-1:737929421946:key/d378b669-0ff6-4c16-8467-d1ff63569369'
+  PRE:
+    REGISTRY_URL: '518822549288.dkr.ecr.eu-west-1.amazonaws.com'
+    REPOSITORY: 'cwei1airecrportalgene001'
+    REGISTRY_CRED: 'REGISTRY_CREDS_AWS_PRE'
+    REGISTRY_KMS: 'arn:aws:kms:eu-west-1:518822549288:key/5b9e4612-6379-40ab-a173-b477b3b80c46'
+  PRO:
+    REGISTRY_URL: '852180292196.dkr.ecr.eu-west-1.amazonaws.com'
+    REPOSITORY: 'cwep1airecrportalgene001'
+    REGISTRY_CRED: 'REGISTRY_CREDS_AWS_PRO'
+    REGISTRY_KMS: 'arn:aws:kms:eu-west-1:852180292196:key/3f79b253-2549-4494-8922-d57355f601e9'   

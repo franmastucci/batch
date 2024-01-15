@@ -1,0 +1,33 @@
+image:
+  repository: 737929421946.dkr.ecr.eu-west-1.amazonaws.com/cwed1airecrportalgene001/ms-spb-wh-representatives
+  tag: SNAPSHOT-0.0.1
+
+microservice: ms-spb-wh-representatives
+namespace: generaltables
+path: /customers/ms-spb-wh-representatives
+hostname: portal.sceu.dev.corp
+secret_name: portal.sceu.dev.corp
+https: true
+port: 8443
+configurationFiles:
+  - name: ms-spb-wh-representatives-config-map
+    data: |-
+      CLOUD_CONFIGURI: "http://ademma-config-server.globalsecurity-dev"
+      URL_COMMON: "https://portal.sceu.dev.corp"
+      NS_GLOBAL_SEC: "globalsecurity"
+      SSL_KEYSTORE: file:/var/keystore/keystore.p12
+      URL_JWK_SET_URI: "https://ademma-authorization-server.globalsecurity/ademma-authorization-server/oauth2/jwks"
+      SERVER_PORT: "8443"
+      APP_VERSION: "SNAPSHOT-0.0.1"
+      LOGGING_LEVEL_ROOT: "INFO"
+      LOGGING_LEVEL_APPLICATION: "INFO"
+      DATADOG: "true"
+      CONFIG_URL_SPRINGDOC: "https://portal.sceu.dev.corp/ms-spb-wh-representatives/v3/api-docs"
+      SPRINGDOC_URL: "/v3/api-docs/swagger-config"
+      HOST_PATH: "/customers/ms-spb-wh-representatives"
+      URL_AS400: "https://s44c0718.scf.corp:40443"
+Secrets:
+  - cwedsslkeystorepass
+
+secret_volume_name: cwedsslkeystore
+secret_volume_path: "/var/keystore"

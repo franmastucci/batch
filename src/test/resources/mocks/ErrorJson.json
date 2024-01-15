@@ -1,0 +1,6 @@
+{
+  "code": 1,
+  "description": "Description example error",
+  "level": "ERROR",
+  "message": "Message example error"
+}
