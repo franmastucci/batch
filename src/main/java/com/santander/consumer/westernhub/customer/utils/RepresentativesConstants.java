@@ -8,16 +8,17 @@ import lombok.NoArgsConstructor;
  *
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class LoanConstants {
+public class RepresentativesConstants {
+
+
+    /** The Constant CUSTOMERS_PATH. */
+    public static final String CUSTOMERS_PATH = "/customers";
 
     /** The Constant REQUEST_MAPPING_PATH_REPRESENTATIVES. */
-    public static final String REQUEST_MAPPING_PATH_REPRESENTATIVES = "/customers/representatives";
+    public static final String REQUEST_MAPPING_PATH_REPRESENTATIVES = CUSTOMERS_PATH + "/representatives";
 
     /** The Constant REPRESENTATIVES_INPUT_DATE_FORMAT. */
     public static final String REPRESENTATIVES_INPUT_DATE_FORMAT = "yyyyMMdd";
-
-    /** The Constant VARIABLE_INTEREST_INPUT_DATE_FORMAT. */
-    public static final String VARIABLE_INTEREST_INPUT_DATE_FORMAT = "ddMMyyyy";
 
     /** The Constant OUTPUT_DATE_FORMAT. */
     public static final String OUTPUT_DATE_FORMAT = "yyyy-MM-dd";

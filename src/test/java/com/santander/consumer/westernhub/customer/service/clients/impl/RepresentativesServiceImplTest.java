@@ -4,7 +4,7 @@ package com.santander.consumer.westernhub.customer.service.clients.impl;
 import com.santander.ademma.common.model.dto.context.ExecutionContext;
 
 import com.santander.consumer.westernhub.customer.client.RepresentativeAS400;
-import com.santander.consumer.westernhub.customer.model.dto.in.RepresentativeDTO;
+import com.santander.consumer.westernhub.customer.model.dto.RepresentativeInDTO;
 import com.santander.consumer.westernhub.customer.model.dto.out.ListRepresentativeOut;
 import com.santander.consumer.westernhub.customer.service.clients.RepresentativeService;
 import com.santander.consumer.westernhub.customer.utils.TestUtils;
@@ -65,15 +65,15 @@ class RepresentativesServiceImplTest {
     @BeforeEach
     void init() throws IOException, URISyntaxException {
         var json = TestUtils.fileToJson("mocks/endpoints/RepresentativeDTO-Mockeado.json");
-        Mockito.when(representative.getRepresentative(Mockito.any(ExecutionContext.class),Mockito.any(RepresentativeDTO.class)))
+        Mockito.when(representative.getRepresentative(Mockito.any(ExecutionContext.class),Mockito.any(RepresentativeInDTO.class)))
                 .thenReturn(new ResponseEntity<String>(json, HttpStatus.OK));
 
     }
 
     @Test
     void testGetRepresentativeList() throws URISyntaxException, IOException {
-        RepresentativeDTO representativeDTO = new RepresentativeDTO("a","a","a","B","a","a");
-        ListRepresentativeOut r = representativeService.getRepresentative(context, representativeDTO);
+        RepresentativeInDTO representativeInDTO = new RepresentativeInDTO("a","a","a","B","a","a");
+        ListRepresentativeOut r = representativeService.getRepresentative(context, representativeInDTO);
         assertNotNull(r);
     }
 

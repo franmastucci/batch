@@ -1,4 +1,4 @@
-package com.santander.consumer.westernhub.customer.model.dto.in;
+package com.santander.consumer.westernhub.customer.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -15,9 +15,9 @@ import java.io.Serializable;
 @Schema(name = "RepresentativeDTO", description = "RepresentativeDTO data")
 @Getter
 @EqualsAndHashCode(callSuper = false)
-public class RepresentativeDTO implements Serializable {
+public class RepresentativeInDTO implements Serializable {
 
-    public RepresentativeDTO(String sociedad, String sucursal, String area, String documentId, String documentType, String operationId ) {
+    public RepresentativeInDTO(String sociedad, String sucursal, String area, String documentId, String documentType, String operationId ) {
         super();
         this.sociedad = sociedad;
         this.sucursal = sucursal;

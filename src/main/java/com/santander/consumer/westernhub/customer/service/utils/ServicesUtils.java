@@ -19,7 +19,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.santander.consumer.westernhub.customer.utils.LoanConstants.*;
+import static com.santander.consumer.westernhub.customer.utils.RepresentativesConstants.*;
 
 @Slf4j
 

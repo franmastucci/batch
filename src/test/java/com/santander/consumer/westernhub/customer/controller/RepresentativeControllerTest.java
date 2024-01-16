@@ -2,12 +2,12 @@ package com.santander.consumer.westernhub.customer.controller;
 
 import com.santander.ademma.common.model.dto.context.ExecutionContext;
 
-import com.santander.consumer.westernhub.customer.model.dto.in.RepresentativeDTO;
+import com.santander.consumer.westernhub.customer.model.dto.RepresentativeInDTO;
 import com.santander.consumer.westernhub.customer.model.dto.out.ListRepresentativeOut;
 import com.santander.consumer.westernhub.customer.model.dto.out.Representative;
 import com.santander.consumer.westernhub.customer.model.dto.out.error.ErrorMessageDTO;
 import com.santander.consumer.westernhub.customer.service.clients.RepresentativeService;
-import com.santander.consumer.westernhub.customer.utils.LoanConstants;
+import com.santander.consumer.westernhub.customer.utils.RepresentativesConstants;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -61,15 +61,15 @@ class RepresentativeControllerTest {
 
         when(representativeService.getRepresentative(
                 any(ExecutionContext.class),
-                any(RepresentativeDTO.class)
+                any(RepresentativeInDTO.class)
         )).thenReturn(null);
 
-        mockMvc.perform(get(LoanConstants.REQUEST_MAPPING_PATH_REPRESENTATIVES+"?documentType=L&operationId=E12F20230148228")
+        mockMvc.perform(get(RepresentativesConstants.REQUEST_MAPPING_PATH_REPRESENTATIVES+"?documentType=L&operationId=E12F20230148228")
                         .contentType(MediaType.APPLICATION_JSON)
                         .header(AUTHORIZATION, AUTHORIZATION)
-                        .header("x-santander-society", LoanConstants.X_SANTANDER_SOCIETY)
-                        .header("x-santander-office", LoanConstants.X_SANTANDER_OFFICE)
-                        .header("x-santander-area", LoanConstants.X_SANTANDER_AREA)
+                        .header("x-santander-society", RepresentativesConstants.X_SANTANDER_SOCIETY)
+                        .header("x-santander-office", RepresentativesConstants.X_SANTANDER_OFFICE)
+                        .header("x-santander-area", RepresentativesConstants.X_SANTANDER_AREA)
                         .header("documentId", "E12F20230148228"))
                 .andExpect(status().isNoContent());
 
@@ -90,15 +90,15 @@ class RepresentativeControllerTest {
         List<ErrorMessageDTO> errors = new ArrayList<>();
         when(representativeService.getRepresentative(
                 any(ExecutionContext.class),
-                any(RepresentativeDTO.class)
+                any(RepresentativeInDTO.class)
         )).thenReturn(new ListRepresentativeOut(repList, errors));
 
-        mockMvc.perform(get(LoanConstants.REQUEST_MAPPING_PATH_REPRESENTATIVES+"?documentType=L&operationId=E12F20230148228")
+        mockMvc.perform(get(RepresentativesConstants.REQUEST_MAPPING_PATH_REPRESENTATIVES+"?documentType=L&operationId=E12F20230148228")
                         .contentType(MediaType.APPLICATION_JSON)
                         .header(AUTHORIZATION, AUTHORIZATION)
-                        .header("x-santander-society", LoanConstants.X_SANTANDER_SOCIETY)
-                        .header("x-santander-office", LoanConstants.X_SANTANDER_OFFICE)
-                        .header("x-santander-area", LoanConstants.X_SANTANDER_AREA)
+                        .header("x-santander-society", RepresentativesConstants.X_SANTANDER_SOCIETY)
+                        .header("x-santander-office", RepresentativesConstants.X_SANTANDER_OFFICE)
+                        .header("x-santander-area", RepresentativesConstants.X_SANTANDER_AREA)
                         .header("documentId", "E12F20230148228"))
                 .andExpect(status().isOk());
     }

@@ -3,7 +3,7 @@ package com.santander.consumer.westernhub.customer.service.clients;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.santander.ademma.common.model.dto.context.ExecutionContext;
-import com.santander.consumer.westernhub.customer.model.dto.in.RepresentativeDTO;
+import com.santander.consumer.westernhub.customer.model.dto.RepresentativeInDTO;
 import com.santander.consumer.westernhub.customer.model.dto.out.ListRepresentativeOut;
 import com.santander.consumer.westernhub.customer.model.dto.out.error.ErrorMessageDTO;
 import com.santander.consumer.westernhub.customer.service.utils.ServicesUtils;
@@ -66,7 +66,7 @@ class ServicesUtilsTest {
         var invalidJson = "invalid JSON string";
 
         assertThrows(MappingException.class,
-                () -> servicesUtils.getObj(invalidJson, RepresentativeDTO.class));
+                () -> servicesUtils.getObj(invalidJson, RepresentativeInDTO.class));
 
     }
 

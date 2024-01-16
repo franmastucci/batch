@@ -5,7 +5,7 @@ import com.santander.ademma.common.model.dto.context.ExecutionContext;
 
 import com.santander.consumer.westernhub.customer.client.RepresentativeAS400;
 import com.santander.consumer.westernhub.customer.config.RepresentativeConfig;
-import com.santander.consumer.westernhub.customer.model.dto.in.RepresentativeDTO;
+import com.santander.consumer.westernhub.customer.model.dto.RepresentativeInDTO;
 import com.santander.consumer.westernhub.customer.utils.TestUtils;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.runner.RunWith;
@@ -69,7 +69,7 @@ class RepresentativeAS400Test {
 
     @Test
     void testGetListRepresentative() throws IOException, URISyntaxException {
-        var representativeDTO = new RepresentativeDTO("E", "MB", "F", "0001441", "10032023","opId");
+        var representativeDTO = new RepresentativeInDTO("E", "MB", "F", "0001441", "10032023","opId");
 
         var json = TestUtils.fileToJson("mocks/endpoints/RepresentativeDTO-Mockeado.json");
 
@@ -90,7 +90,7 @@ class RepresentativeAS400Test {
 
     @Test
     void testRetryExceptionErrorDescription()  {
-        var representativeDTO = new RepresentativeDTO("E", "MB", "F", "0001441", "10032023","opId");
+        var representativeDTO = new RepresentativeInDTO("E", "MB", "F", "0001441", "10032023","opId");
 
         try {
             representativeAS400.getRepresentative(context, representativeDTO);
@@ -108,7 +108,7 @@ class RepresentativeAS400Test {
     @Test
     void testRetryExceptionWithStatus400() throws IOException {
 
-        var representativeDTO = new RepresentativeDTO("E", "MB", "F", "0001441", "10032023","opId");
+        var representativeDTO = new RepresentativeInDTO("E", "MB", "F", "0001441", "10032023","opId");
 
         var jsonError = TestUtils.fileToJson("mocks/ErrorJson.json");
 
@@ -132,7 +132,7 @@ class RepresentativeAS400Test {
     @Test
     void testRetryExceptionWithStatus502() throws IOException {
 
-        var representativeDTO = new RepresentativeDTO("E", "MB", "F", "0001441", "10032023","opId");
+        var representativeDTO = new RepresentativeInDTO("E", "MB", "F", "0001441", "10032023","opId");
 
         var jsonError = TestUtils.fileToJson("mocks/ErrorJson.json");
 

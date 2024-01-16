@@ -6,7 +6,7 @@ import com.santander.ademma.common.utils.httpclient.HttpClientUtils;
 import com.santander.ademma.common.utils.logging.LoggingUtils;
 import com.santander.consumer.westernhub.customer.client.RepresentativeAS400;
 import com.santander.consumer.westernhub.customer.config.RepresentativeConfig;
-import com.santander.consumer.westernhub.customer.model.dto.in.RepresentativeDTO;
+import com.santander.consumer.westernhub.customer.model.dto.RepresentativeInDTO;
 import com.santander.consumer.westernhub.customer.service.utils.ServicesUtils;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.extern.slf4j.Slf4j;
@@ -24,7 +24,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
 
-import static com.santander.consumer.westernhub.customer.utils.LoanConstants.*;
+import static com.santander.consumer.westernhub.customer.utils.RepresentativesConstants.*;
 
 /**
  * The Class RepresentativeAS400Impl.
@@ -72,21 +72,21 @@ public class RepresentativeAS400Impl implements RepresentativeAS400 {
     @Override
     @Retry(name = "codeClientRT", fallbackMethod = "fallbackRetry")
     public ResponseEntity<String> getRepresentative(ExecutionContext context,
-                                                         RepresentativeDTO representativeDTO) {
+                                                         RepresentativeInDTO representativeInDTO) {
         // Log Client Init
-        LoggingUtils.logClientInit(log, "getOperations", context.getContext(), "");
+        LoggingUtils.logClientInit(log, "getRepresentatives", context.getContext(), "");
 
         // Get headers and URI
         HttpHeaders headers = HttpClientUtils.generateHeaders(context);
 
-        headers.add(X_SANTANDER_OFFICE, representativeDTO.getSucursal());
-        headers.add(X_SANTANDER_AREA, representativeDTO.getArea());
-        headers.add(X_SANTANDER_SOCIETY, representativeDTO.getSociedad());
-        headers.add(DOCUMEMNT_ID, representativeDTO.getDocumentId());
+        headers.add(X_SANTANDER_OFFICE, representativeInDTO.getSucursal());
+        headers.add(X_SANTANDER_AREA, representativeInDTO.getArea());
+        headers.add(X_SANTANDER_SOCIETY, representativeInDTO.getSociedad());
+        headers.add(DOCUMEMNT_ID, representativeInDTO.getDocumentId());
 
         var ur2 = UriComponentsBuilder.fromUriString(representativeConfig.getRepresentativeEndpoint());
-        addParameter(ur2, "documentType", representativeDTO.getDocumentType());
-        addParameter(ur2, "operationId", representativeDTO.getOperationId());
+        addParameter(ur2, "documentType", representativeInDTO.getDocumentType());
+        addParameter(ur2, "operationId", representativeInDTO.getOperationId());
 
         var uri = ur2.build().encode().toUri();
 

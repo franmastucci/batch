@@ -3,7 +3,7 @@ package com.santander.consumer.westernhub.customer.service.clients.impl;
 import com.santander.ademma.common.model.dto.context.ExecutionContext;
 import com.santander.ademma.common.utils.logging.LoggingUtils;
 import com.santander.consumer.westernhub.customer.client.RepresentativeAS400;
-import com.santander.consumer.westernhub.customer.model.dto.in.RepresentativeDTO;
+import com.santander.consumer.westernhub.customer.model.dto.RepresentativeInDTO;
 import com.santander.consumer.westernhub.customer.model.dto.out.ListRepresentativeOut;
 import com.santander.consumer.westernhub.customer.service.clients.RepresentativeService;
 import com.santander.consumer.westernhub.customer.service.utils.ServicesUtils;
@@ -42,8 +42,8 @@ public class  RepresentativeServiceImpl implements RepresentativeService {
 
 
     @Override
-    public ListRepresentativeOut getRepresentative(ExecutionContext executionContext, RepresentativeDTO representativeDTO) throws URISyntaxException {
-        ResponseEntity<String> response =  this.representative.getRepresentative(executionContext, representativeDTO);
+    public ListRepresentativeOut getRepresentative(ExecutionContext executionContext, RepresentativeInDTO representativeInDTO) throws URISyntaxException {
+        ResponseEntity<String> response =  this.representative.getRepresentative(executionContext, representativeInDTO);
         LoggingUtils.logControllerResponse(log, response);
         return ut.switchStatusRepresentatives(executionContext, response);
     }

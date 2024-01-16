@@ -3,7 +3,7 @@ package com.santander.consumer.westernhub.customer.controller;
 import com.santander.ademma.common.model.dto.ResponseDTO;
 import com.santander.ademma.common.model.dto.context.ExecutionContext;
 import com.santander.ademma.common.utils.logging.LoggingUtils;
-import com.santander.consumer.westernhub.customer.model.dto.in.RepresentativeDTO;
+import com.santander.consumer.westernhub.customer.model.dto.RepresentativeInDTO;
 import com.santander.consumer.westernhub.customer.model.dto.out.ListRepresentativeOut;
 import com.santander.consumer.westernhub.customer.model.dto.out.error.ErrorListMessageDTO;
 import com.santander.consumer.westernhub.customer.service.clients.RepresentativeService;
@@ -29,7 +29,7 @@ import org.springframework.web.context.request.WebRequest;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-import static com.santander.consumer.westernhub.customer.utils.LoanConstants.*;
+import static com.santander.consumer.westernhub.customer.utils.RepresentativesConstants.*;
 
 
 /**
@@ -128,12 +128,12 @@ public class RepresentativeController {
 
         LoggingUtils.logControllerInit(log, GET_REPRESENTATIVES_INFO, language);
 
-        RepresentativeDTO representativeDTO = new RepresentativeDTO(ServicesUtils.normalizeSpace(society),
+        RepresentativeInDTO representativeInDTO = new RepresentativeInDTO(ServicesUtils.normalizeSpace(society),
                 ServicesUtils.normalizeSpace(office), ServicesUtils.normalizeSpace(area),
                 ServicesUtils.normalizeSpace(documentId), ServicesUtils.normalizeSpace(documentType),
                 ServicesUtils.normalizeSpace(operationId));
 
-        ListRepresentativeOut representativeOut = representativeService.getRepresentative(executionContext,representativeDTO);
+        ListRepresentativeOut representativeOut = representativeService.getRepresentative(executionContext, representativeInDTO);
 
         if (ObjectUtils.isEmpty(representativeOut)) {
             LoggingUtils.logControllerResponse(log, request, ResponseDTO.buildResponseDTO(HttpStatus.NO_CONTENT, null));
@@ -143,7 +143,7 @@ public class RepresentativeController {
         if (!ObjectUtils.isEmpty(representativeOut.getErrors())) {
             var representativeErrorsOut = new ListRepresentativeOut();
             representativeErrorsOut.setErrors(representativeOut.getErrors());
-            LoggingUtils.logControllerResponse(log, request, ResponseDTO.buildResponseDTO(HttpStatus.BAD_REQUEST, null));
+            LoggingUtils.logControllerResponse(log, request, ResponseDTO.buildResponseDTO(HttpStatus.BAD_REQUEST, representativeErrorsOut));
             return ResponseEntity.badRequest().body(representativeErrorsOut);
         }
 
