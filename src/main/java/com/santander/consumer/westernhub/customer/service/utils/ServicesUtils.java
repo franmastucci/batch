@@ -45,7 +45,6 @@ public class ServicesUtils {
      * @return the gets the customers out
      */
 
-
     public ListRepresentativeOut switchStatusRepresentatives(ExecutionContext context, ResponseEntity<String> response) {
         ListRepresentativeOut dto = null;
 
