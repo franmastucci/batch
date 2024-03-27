@@ -1,0 +1,217 @@
+@options
+@packages
+-classpath
+'/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.1.4/spring-boot-starter-data-jpa-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/hibernate/orm/hibernate-core/6.2.9.Final/hibernate-core-6.2.9.Final.jar:/Users/franciscojosemastucci/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/franciscojosemastucci/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/franciscojosemastucci/.m2/repository/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/data/spring-data-jpa/3.1.4/spring-data-jpa-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/data/spring-data-commons/3.1.4/spring-data-commons-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-orm/6.0.12/spring-orm-6.0.12.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-tx/6.0.12/spring-tx-6.0.12.jar:/Users/franciscojosemastucci/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-aspects/6.0.12/spring-aspects-6.0.12.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.1.4/spring-boot-starter-jdbc-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter/3.1.4/spring-boot-starter-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot/3.1.4/spring-boot-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.1.4/spring-boot-autoconfigure-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.1.4/spring-boot-starter-logging-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/ch/qos/logback/logback-classic/1.4.11/logback-classic-1.4.11.jar:/Users/franciscojosemastucci/.m2/repository/ch/qos/logback/logback-core/1.4.11/logback-core-1.4.11.jar:/Users/franciscojosemastucci/.m2/repository/org/slf4j/jul-to-slf4j/2.0.9/jul-to-slf4j-2.0.9.jar:/Users/franciscojosemastucci/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-jdbc/6.0.12/spring-jdbc-6.0.12.jar:/Users/franciscojosemastucci/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar:/Users/franciscojosemastucci/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2.2/httpcore5-5.2.2.jar:/Users/franciscojosemastucci/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2.2/httpcore5-h2-5.2.2.jar:/Users/franciscojosemastucci/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/security/spring-security-oauth2-resource-server/6.1.4/spring-security-oauth2-resource-server-6.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/security/spring-security-core/6.1.4/spring-security-core-6.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/security/spring-security-crypto/6.1.4/spring-security-crypto-6.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-expression/6.0.12/spring-expression-6.0.12.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/security/spring-security-oauth2-core/6.1.4/spring-security-oauth2-core-6.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/security/spring-security-web/6.1.4/spring-security-web-6.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-core/6.0.12/spring-core-6.0.12.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-jcl/6.0.12/spring-jcl-6.0.12.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/security/spring-security-oauth2-jose/6.1.4/spring-security-oauth2-jose-6.1.4.jar:/Users/franciscojosemastucci/.m2/repository/com/nimbusds/nimbus-jose-jwt/9.31/nimbus-jose-jwt-9.31.jar:/Users/franciscojosemastucci/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar:/Users/franciscojosemastucci/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.2.0/springdoc-openapi-starter-webmvc-ui-2.2.0.jar:/Users/franciscojosemastucci/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.2.0/springdoc-openapi-starter-webmvc-api-2.2.0.jar:/Users/franciscojosemastucci/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.2.0/springdoc-openapi-starter-common-2.2.0.jar:/Users/franciscojosemastucci/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.15/swagger-core-jakarta-2.2.15.jar:/Users/franciscojosemastucci/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.15/swagger-annotations-jakarta-2.2.15.jar:/Users/franciscojosemastucci/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.15/swagger-models-jakarta-2.2.15.jar:/Users/franciscojosemastucci/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.15.2/jackson-dataformat-yaml-2.15.2.jar:/Users/franciscojosemastucci/.m2/repository/org/webjars/swagger-ui/5.2.0/swagger-ui-5.2.0.jar:/Users/franciscojosemastucci/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/Users/franciscojosemastucci/.m2/repository/org/bouncycastle/bcpkix-jdk18on/1.72/bcpkix-jdk18on-1.72.jar:/Users/franciscojosemastucci/.m2/repository/org/bouncycastle/bcutil-jdk18on/1.72/bcutil-jdk18on-1.72.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-beans/6.0.12/spring-beans-6.0.12.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-context/6.0.12/spring-context-6.0.12.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-web/6.0.12/spring-web-6.0.12.jar:/Users/franciscojosemastucci/.m2/repository/org/checkerframework/checker-qual/3.31.0/checker-qual-3.31.0.jar:/Users/franciscojosemastucci/.m2/repository/com/opencsv/opencsv/5.9/opencsv-5.9.jar:/Users/franciscojosemastucci/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/Users/franciscojosemastucci/.m2/repository/org/apache/commons/commons-text/1.11.0/commons-text-1.11.0.jar:/Users/franciscojosemastucci/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/Users/franciscojosemastucci/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/franciscojosemastucci/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-batch/3.1.4/spring-boot-starter-batch-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/batch/spring-batch-core/5.0.3/spring-batch-core-5.0.3.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/batch/spring-batch-infrastructure/5.0.3/spring-batch-infrastructure-5.0.3.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/retry/spring-retry/2.0.3/spring-retry-2.0.3.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.1.4/spring-boot-starter-web-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.1.4/spring-boot-starter-json-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.2/jackson-datatype-jdk8-2.15.2.jar:/Users/franciscojosemastucci/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.2/jackson-module-parameter-names-2.15.2.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.1.4/spring-boot-starter-tomcat-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.13/tomcat-embed-core-10.1.13.jar:/Users/franciscojosemastucci/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.13/tomcat-embed-el-10.1.13.jar:/Users/franciscojosemastucci/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.13/tomcat-embed-websocket-10.1.13.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-webmvc/6.0.12/spring-webmvc-6.0.12.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/3.1.4/spring-boot-starter-actuator-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-actuator-autoconfigure/3.1.4/spring-boot-actuator-autoconfigure-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-actuator/3.1.4/spring-boot-actuator-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/io/micrometer/micrometer-observation/1.11.4/micrometer-observation-1.11.4.jar:/Users/franciscojosemastucci/.m2/repository/io/micrometer/micrometer-commons/1.11.4/micrometer-commons-1.11.4.jar:/Users/franciscojosemastucci/.m2/repository/io/micrometer/micrometer-core/1.11.4/micrometer-core-1.11.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/cloud/spring-cloud-starter-config/4.0.4/spring-cloud-starter-config-4.0.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/cloud/spring-cloud-starter/4.0.4/spring-cloud-starter-4.0.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/cloud/spring-cloud-context/4.0.4/spring-cloud-context-4.0.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/cloud/spring-cloud-commons/4.0.4/spring-cloud-commons-4.0.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/security/spring-security-rsa/1.0.12.RELEASE/spring-security-rsa-1.0.12.RELEASE.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/cloud/spring-cloud-config-client/4.0.4/spring-cloud-config-client-4.0.4.jar:/Users/franciscojosemastucci/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/cloud/spring-cloud-starter-bootstrap/4.0.4/spring-cloud-starter-bootstrap-4.0.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.1.4/spring-boot-starter-aop-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-aop/6.0.12/spring-aop-6.0.12.jar:/Users/franciscojosemastucci/.m2/repository/org/aspectj/aspectjweaver/1.9.20/aspectjweaver-1.9.20.jar:/Users/franciscojosemastucci/.m2/repository/org/mapstruct/mapstruct/1.4.2.Final/mapstruct-1.4.2.Final.jar:/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-spring-boot3/2.0.2/resilience4j-spring-boot3-2.0.2.jar:/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-spring6/2.0.2/resilience4j-spring6-2.0.2.jar:/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-annotations/2.0.2/resilience4j-annotations-2.0.2.jar:/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-consumer/2.0.2/resilience4j-consumer-2.0.2.jar:/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-framework-common/2.0.2/resilience4j-framework-common-2.0.2.jar:/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-metrics/2.0.2/resilience4j-metrics-2.0.2.jar:/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-all/2.0.2/resilience4j-all-2.0.2.jar:/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-ratelimiter/2.0.2/resilience4j-ratelimiter-2.0.2.jar:/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-core/2.0.2/resilience4j-core-2.0.2.jar:/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-circuitbreaker/2.0.2/resilience4j-circuitbreaker-2.0.2.jar:/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-bulkhead/2.0.2/resilience4j-bulkhead-2.0.2.jar:/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-retry/2.0.2/resilience4j-retry-2.0.2.jar:/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-cache/2.0.2/resilience4j-cache-2.0.2.jar:/Users/franciscojosemastucci/.m2/repository/javax/cache/cache-api/1.1.1/cache-api-1.1.1.jar:/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-timelimiter/2.0.2/resilience4j-timelimiter-2.0.2.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.1.4/spring-boot-starter-security-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/security/spring-security-config/6.1.4/spring-security-config-6.1.4.jar:/Users/franciscojosemastucci/.m2/repository/com/santander/ademma/ademma-common-utilities/4.3.0/ademma-common-utilities-4.3.0.jar:/Users/franciscojosemastucci/.m2/repository/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar:/Users/franciscojosemastucci/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.20.0/log4j-to-slf4j-2.20.0.jar:/Users/franciscojosemastucci/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar:/Users/franciscojosemastucci/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar:/Users/franciscojosemastucci/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar:/Users/franciscojosemastucci/.m2/repository/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar:/Users/franciscojosemastucci/.m2/repository/com/santander/ademma/ademma-msfinder-properties-impl/3.1.0/ademma-msfinder-properties-impl-3.1.0.jar:/Users/franciscojosemastucci/.m2/repository/com/santander/ademma/ademma-msfinder-interface/3.1.0/ademma-msfinder-interface-3.1.0.jar:/Users/franciscojosemastucci/.m2/repository/com/santander/ademma/ademma-sync-internal-caller/3.1.0/ademma-sync-internal-caller-3.1.0.jar:/Users/franciscojosemastucci/.m2/repository/net/logstash/logback/logstash-logback-encoder/7.3/logstash-logback-encoder-7.3.jar:/Users/franciscojosemastucci/.m2/repository/org/codehaus/janino/janino/3.1.10/janino-3.1.10.jar:/Users/franciscojosemastucci/.m2/repository/org/codehaus/janino/commons-compiler/3.1.10/commons-compiler-3.1.10.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-cache/3.1.4/spring-boot-starter-cache-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-context-support/6.0.12/spring-context-support-6.0.12.jar:/Users/franciscojosemastucci/.m2/repository/com/github/ben-manes/caffeine/caffeine/3.1.8/caffeine-3.1.8.jar:/Users/franciscojosemastucci/.m2/repository/com/google/errorprone/error_prone_annotations/2.21.1/error_prone_annotations-2.21.1.jar:/Users/franciscojosemastucci/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/franciscojosemastucci/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar:/Users/franciscojosemastucci/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/Users/franciscojosemastucci/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.3/jaxb-runtime-4.0.3.jar:/Users/franciscojosemastucci/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.3/jaxb-core-4.0.3.jar:/Users/franciscojosemastucci/.m2/repository/org/glassfish/jaxb/txw2/4.0.3/txw2-4.0.3.jar:/Users/franciscojosemastucci/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/franciscojosemastucci/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/Users/franciscojosemastucci/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/Users/franciscojosemastucci/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/Users/franciscojosemastucci/.m2/repository/io/micrometer/micrometer-registry-dynatrace/1.11.4/micrometer-registry-dynatrace-1.11.4.jar:/Users/franciscojosemastucci/.m2/repository/commons-io/commons-io/2.13.0/commons-io-2.13.0.jar:/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-configuration-processor/3.1.4/spring-boot-configuration-processor-3.1.4.jar:/Users/franciscojosemastucci/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.2/jackson-datatype-jsr310-2.15.2.jar:/Users/franciscojosemastucci/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/franciscojosemastucci/.m2/repository/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar:/Users/franciscojosemastucci/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/franciscojosemastucci/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/franciscojosemastucci/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/franciscojosemastucci/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:/Users/franciscojosemastucci/.m2/repository/io/netty/netty-handler/4.1.100.Final/netty-handler-4.1.100.Final.jar:/Users/franciscojosemastucci/.m2/repository/io/netty/netty-common/4.1.97.Final/netty-common-4.1.97.Final.jar:/Users/franciscojosemastucci/.m2/repository/io/netty/netty-resolver/4.1.97.Final/netty-resolver-4.1.97.Final.jar:/Users/franciscojosemastucci/.m2/repository/io/netty/netty-buffer/4.1.97.Final/netty-buffer-4.1.97.Final.jar:/Users/franciscojosemastucci/.m2/repository/io/netty/netty-transport/4.1.97.Final/netty-transport-4.1.97.Final.jar:/Users/franciscojosemastucci/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.97.Final/netty-transport-native-unix-common-4.1.97.Final.jar:/Users/franciscojosemastucci/.m2/repository/io/netty/netty-codec/4.1.97.Final/netty-codec-4.1.97.Final.jar:/Users/franciscojosemastucci/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.76/bcprov-jdk18on-1.76.jar:/Users/franciscojosemastucci/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+17
+-sourcepath
+'/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/src/main/java:/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs'
+-docencoding
+'UTF-8'
+-Xdoclint:all,-missing
+-doctitle
+'representatives 0.0.1-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'representatives 0.0.1-SNAPSHOT API'
+com.santander.consumer.westernhub.customer.handler.httpclient
+com.santander.consumer.westernhub.customer.config.httpclient
+com.santander.consumer.westernhub.customer.config.cache
+com.santander.consumer.westernhub.customer.config.security
+com.santander.consumer.westernhub.customer.config.docs
+com.santander.consumer.westernhub.customer.config
+com.santander.consumer.westernhub.customer.config.common
+com.santander.consumer.westernhub.customer
+com.santander.consumer.westernhub.customer.utils
+com.santander.consumer.westernhub.customer.controller
+com.santander.consumer.westernhub.customer.model.dto.out
+com.santander.consumer.westernhub.customer.model.dto.out.error
+com.santander.consumer.westernhub.customer.model.dto
+com.santander.consumer.westernhub.customer.service.clients.impl
+com.santander.consumer.westernhub.customer.service.clients
+com.santander.consumer.westernhub.customer.service.utils
+com.santander.consumer.westernhub.customer.client.impl
+com.santander.consumer.westernhub.customer.client
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.1.4/spring-boot-starter-data-jpa-3.1.4.jar = 1711456462383
+/Users/franciscojosemastucci/.m2/repository/org/hibernate/orm/hibernate-core/6.2.9.Final/hibernate-core-6.2.9.Final.jar = 1711456462850
+/Users/franciscojosemastucci/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar = 1711456462454
+/Users/franciscojosemastucci/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar = 1711456462450
+/Users/franciscojosemastucci/.m2/repository/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar = 1711456462740
+/Users/franciscojosemastucci/.m2/repository/org/springframework/data/spring-data-jpa/3.1.4/spring-data-jpa-3.1.4.jar = 1711456462811
+/Users/franciscojosemastucci/.m2/repository/org/springframework/data/spring-data-commons/3.1.4/spring-data-commons-3.1.4.jar = 1711456462816
+/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-orm/6.0.12/spring-orm-6.0.12.jar = 1711456462804
+/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-tx/6.0.12/spring-tx-6.0.12.jar = 1711456462865
+/Users/franciscojosemastucci/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar = 1711456462165
+/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-aspects/6.0.12/spring-aspects-6.0.12.jar = 1711456462859
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.1.4/spring-boot-starter-jdbc-3.1.4.jar = 1711456462403
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter/3.1.4/spring-boot-starter-3.1.4.jar = 1711456461987
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot/3.1.4/spring-boot-3.1.4.jar = 1711456462158
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.1.4/spring-boot-autoconfigure-3.1.4.jar = 1711456462199
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.1.4/spring-boot-starter-logging-3.1.4.jar = 1711456462028
+/Users/franciscojosemastucci/.m2/repository/ch/qos/logback/logback-classic/1.4.11/logback-classic-1.4.11.jar = 1711456462106
+/Users/franciscojosemastucci/.m2/repository/ch/qos/logback/logback-core/1.4.11/logback-core-1.4.11.jar = 1711456462170
+/Users/franciscojosemastucci/.m2/repository/org/slf4j/jul-to-slf4j/2.0.9/jul-to-slf4j-2.0.9.jar = 1711456462097
+/Users/franciscojosemastucci/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar = 1711456462408
+/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-jdbc/6.0.12/spring-jdbc-6.0.12.jar = 1711456462436
+/Users/franciscojosemastucci/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.2.1/httpclient5-5.2.1.jar = 1711456463902
+/Users/franciscojosemastucci/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2.2/httpcore5-5.2.2.jar = 1711456463888
+/Users/franciscojosemastucci/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2.2/httpcore5-h2-5.2.2.jar = 1711456463894
+/Users/franciscojosemastucci/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar = 1711456463678
+/Users/franciscojosemastucci/.m2/repository/org/springframework/security/spring-security-oauth2-resource-server/6.1.4/spring-security-oauth2-resource-server-6.1.4.jar = 1711457295627
+/Users/franciscojosemastucci/.m2/repository/org/springframework/security/spring-security-core/6.1.4/spring-security-core-6.1.4.jar = 1711456463831
+/Users/franciscojosemastucci/.m2/repository/org/springframework/security/spring-security-crypto/6.1.4/spring-security-crypto-6.1.4.jar = 1711456463009
+/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-expression/6.0.12/spring-expression-6.0.12.jar = 1711456462396
+/Users/franciscojosemastucci/.m2/repository/org/springframework/security/spring-security-oauth2-core/6.1.4/spring-security-oauth2-core-6.1.4.jar = 1711457295687
+/Users/franciscojosemastucci/.m2/repository/org/springframework/security/spring-security-web/6.1.4/spring-security-web-6.1.4.jar = 1711456464003
+/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-core/6.0.12/spring-core-6.0.12.jar = 1711456463486
+/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-jcl/6.0.12/spring-jcl-6.0.12.jar = 1711456463444
+/Users/franciscojosemastucci/.m2/repository/org/springframework/security/spring-security-oauth2-jose/6.1.4/spring-security-oauth2-jose-6.1.4.jar = 1711457295692
+/Users/franciscojosemastucci/.m2/repository/com/nimbusds/nimbus-jose-jwt/9.31/nimbus-jose-jwt-9.31.jar = 1711457295807
+/Users/franciscojosemastucci/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar = 1711456463976
+/Users/franciscojosemastucci/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.2.0/springdoc-openapi-starter-webmvc-ui-2.2.0.jar = 1711457295648
+/Users/franciscojosemastucci/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.2.0/springdoc-openapi-starter-webmvc-api-2.2.0.jar = 1711457295694
+/Users/franciscojosemastucci/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.2.0/springdoc-openapi-starter-common-2.2.0.jar = 1711457295791
+/Users/franciscojosemastucci/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.15/swagger-core-jakarta-2.2.15.jar = 1711457295784
+/Users/franciscojosemastucci/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.15/swagger-annotations-jakarta-2.2.15.jar = 1711457295756
+/Users/franciscojosemastucci/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.15/swagger-models-jakarta-2.2.15.jar = 1711457295771
+/Users/franciscojosemastucci/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.15.2/jackson-dataformat-yaml-2.15.2.jar = 1711456463576
+/Users/franciscojosemastucci/.m2/repository/org/webjars/swagger-ui/5.2.0/swagger-ui-5.2.0.jar = 1711457296109
+/Users/franciscojosemastucci/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar = 1711457295899
+/Users/franciscojosemastucci/.m2/repository/org/bouncycastle/bcpkix-jdk18on/1.72/bcpkix-jdk18on-1.72.jar = 1711457296119
+/Users/franciscojosemastucci/.m2/repository/org/bouncycastle/bcutil-jdk18on/1.72/bcutil-jdk18on-1.72.jar = 1711457296140
+/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-beans/6.0.12/spring-beans-6.0.12.jar = 1711456462337
+/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-context/6.0.12/spring-context-6.0.12.jar = 1711456462362
+/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-web/6.0.12/spring-web-6.0.12.jar = 1711456462948
+/Users/franciscojosemastucci/.m2/repository/org/checkerframework/checker-qual/3.31.0/checker-qual-3.31.0.jar = 1711456462032
+/Users/franciscojosemastucci/.m2/repository/com/opencsv/opencsv/5.9/opencsv-5.9.jar = 1711457473668
+/Users/franciscojosemastucci/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar = 1711456464182
+/Users/franciscojosemastucci/.m2/repository/org/apache/commons/commons-text/1.11.0/commons-text-1.11.0.jar = 1711457473687
+/Users/franciscojosemastucci/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar = 1711457296173
+/Users/franciscojosemastucci/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar = 1711456567634
+/Users/franciscojosemastucci/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar = 1711456567598
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-batch/3.1.4/spring-boot-starter-batch-3.1.4.jar = 1711457473769
+/Users/franciscojosemastucci/.m2/repository/org/springframework/batch/spring-batch-core/5.0.3/spring-batch-core-5.0.3.jar = 1711457473728
+/Users/franciscojosemastucci/.m2/repository/org/springframework/batch/spring-batch-infrastructure/5.0.3/spring-batch-infrastructure-5.0.3.jar = 1711457473728
+/Users/franciscojosemastucci/.m2/repository/org/springframework/retry/spring-retry/2.0.3/spring-retry-2.0.3.jar = 1711457473721
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.1.4/spring-boot-starter-web-3.1.4.jar = 1711456461985
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.1.4/spring-boot-starter-json-3.1.4.jar = 1711456462162
+/Users/franciscojosemastucci/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.2/jackson-datatype-jdk8-2.15.2.jar = 1711456462206
+/Users/franciscojosemastucci/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.2/jackson-module-parameter-names-2.15.2.jar = 1711456462203
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.1.4/spring-boot-starter-tomcat-3.1.4.jar = 1711456462207
+/Users/franciscojosemastucci/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.13/tomcat-embed-core-10.1.13.jar = 1711456462364
+/Users/franciscojosemastucci/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.13/tomcat-embed-el-10.1.13.jar = 1711456464334
+/Users/franciscojosemastucci/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.13/tomcat-embed-websocket-10.1.13.jar = 1711456462258
+/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-webmvc/6.0.12/spring-webmvc-6.0.12.jar = 1711456462337
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/3.1.4/spring-boot-starter-actuator-3.1.4.jar = 1711456462860
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-actuator-autoconfigure/3.1.4/spring-boot-actuator-autoconfigure-3.1.4.jar = 1711456462929
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-actuator/3.1.4/spring-boot-actuator-3.1.4.jar = 1711456462924
+/Users/franciscojosemastucci/.m2/repository/io/micrometer/micrometer-observation/1.11.4/micrometer-observation-1.11.4.jar = 1711456462899
+/Users/franciscojosemastucci/.m2/repository/io/micrometer/micrometer-commons/1.11.4/micrometer-commons-1.11.4.jar = 1711456462904
+/Users/franciscojosemastucci/.m2/repository/io/micrometer/micrometer-core/1.11.4/micrometer-core-1.11.4.jar = 1711456462969
+/Users/franciscojosemastucci/.m2/repository/org/springframework/cloud/spring-cloud-starter-config/4.0.4/spring-cloud-starter-config-4.0.4.jar = 1711456462974
+/Users/franciscojosemastucci/.m2/repository/org/springframework/cloud/spring-cloud-starter/4.0.4/spring-cloud-starter-4.0.4.jar = 1711456462992
+/Users/franciscojosemastucci/.m2/repository/org/springframework/cloud/spring-cloud-context/4.0.4/spring-cloud-context-4.0.4.jar = 1711456463035
+/Users/franciscojosemastucci/.m2/repository/org/springframework/cloud/spring-cloud-commons/4.0.4/spring-cloud-commons-4.0.4.jar = 1711456463015
+/Users/franciscojosemastucci/.m2/repository/org/springframework/security/spring-security-rsa/1.0.12.RELEASE/spring-security-rsa-1.0.12.RELEASE.jar = 1711456463998
+/Users/franciscojosemastucci/.m2/repository/org/springframework/cloud/spring-cloud-config-client/4.0.4/spring-cloud-config-client-4.0.4.jar = 1711456463014
+/Users/franciscojosemastucci/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar = 1711456463082
+/Users/franciscojosemastucci/.m2/repository/org/springframework/cloud/spring-cloud-starter-bootstrap/4.0.4/spring-cloud-starter-bootstrap-4.0.4.jar = 1711456463081
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.1.4/spring-boot-starter-aop-3.1.4.jar = 1711456463049
+/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-aop/6.0.12/spring-aop-6.0.12.jar = 1711456463067
+/Users/franciscojosemastucci/.m2/repository/org/aspectj/aspectjweaver/1.9.20/aspectjweaver-1.9.20.jar = 1711456463558
+/Users/franciscojosemastucci/.m2/repository/org/mapstruct/mapstruct/1.4.2.Final/mapstruct-1.4.2.Final.jar = 1711456463594
+/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-spring-boot3/2.0.2/resilience4j-spring-boot3-2.0.2.jar = 1711456463600
+/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-spring6/2.0.2/resilience4j-spring6-2.0.2.jar = 1711456463632
+/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-annotations/2.0.2/resilience4j-annotations-2.0.2.jar = 1711456463630
+/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-consumer/2.0.2/resilience4j-consumer-2.0.2.jar = 1711456463657
+/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-framework-common/2.0.2/resilience4j-framework-common-2.0.2.jar = 1711456463689
+/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-metrics/2.0.2/resilience4j-metrics-2.0.2.jar = 1711456463696
+/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-all/2.0.2/resilience4j-all-2.0.2.jar = 1711456463695
+/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-ratelimiter/2.0.2/resilience4j-ratelimiter-2.0.2.jar = 1711456463716
+/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-core/2.0.2/resilience4j-core-2.0.2.jar = 1711456463729
+/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-circuitbreaker/2.0.2/resilience4j-circuitbreaker-2.0.2.jar = 1711456463736
+/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-bulkhead/2.0.2/resilience4j-bulkhead-2.0.2.jar = 1711456463733
+/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-retry/2.0.2/resilience4j-retry-2.0.2.jar = 1711456463754
+/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-cache/2.0.2/resilience4j-cache-2.0.2.jar = 1711456463767
+/Users/franciscojosemastucci/.m2/repository/javax/cache/cache-api/1.1.1/cache-api-1.1.1.jar = 1711456463770
+/Users/franciscojosemastucci/.m2/repository/io/github/resilience4j/resilience4j-timelimiter/2.0.2/resilience4j-timelimiter-2.0.2.jar = 1711456463774
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.1.4/spring-boot-starter-security-3.1.4.jar = 1711456463796
+/Users/franciscojosemastucci/.m2/repository/org/springframework/security/spring-security-config/6.1.4/spring-security-config-6.1.4.jar = 1711456463868
+/Users/franciscojosemastucci/.m2/repository/com/santander/ademma/ademma-common-utilities/4.3.0/ademma-common-utilities-4.3.0.jar = 1711456503703
+/Users/franciscojosemastucci/.m2/repository/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar = 1711456464113
+/Users/franciscojosemastucci/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.20.0/log4j-to-slf4j-2.20.0.jar = 1711456463914
+/Users/franciscojosemastucci/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar = 1711456463933
+/Users/franciscojosemastucci/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar = 1711456463930
+/Users/franciscojosemastucci/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar = 1711456469683
+/Users/franciscojosemastucci/.m2/repository/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar = 1711456464143
+/Users/franciscojosemastucci/.m2/repository/com/santander/ademma/ademma-msfinder-properties-impl/3.1.0/ademma-msfinder-properties-impl-3.1.0.jar = 1711456503587
+/Users/franciscojosemastucci/.m2/repository/com/santander/ademma/ademma-msfinder-interface/3.1.0/ademma-msfinder-interface-3.1.0.jar = 1711456503589
+/Users/franciscojosemastucci/.m2/repository/com/santander/ademma/ademma-sync-internal-caller/3.1.0/ademma-sync-internal-caller-3.1.0.jar = 1711456503469
+/Users/franciscojosemastucci/.m2/repository/net/logstash/logback/logstash-logback-encoder/7.3/logstash-logback-encoder-7.3.jar = 1711456464181
+/Users/franciscojosemastucci/.m2/repository/org/codehaus/janino/janino/3.1.10/janino-3.1.10.jar = 1711456464212
+/Users/franciscojosemastucci/.m2/repository/org/codehaus/janino/commons-compiler/3.1.10/commons-compiler-3.1.10.jar = 1711456464239
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-starter-cache/3.1.4/spring-boot-starter-cache-3.1.4.jar = 1711456464229
+/Users/franciscojosemastucci/.m2/repository/org/springframework/spring-context-support/6.0.12/spring-context-support-6.0.12.jar = 1711456464235
+/Users/franciscojosemastucci/.m2/repository/com/github/ben-manes/caffeine/caffeine/3.1.8/caffeine-3.1.8.jar = 1711456464277
+/Users/franciscojosemastucci/.m2/repository/com/google/errorprone/error_prone_annotations/2.21.1/error_prone_annotations-2.21.1.jar = 1711456464281
+/Users/franciscojosemastucci/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar = 1711456464336
+/Users/franciscojosemastucci/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar = 1711456463169
+/Users/franciscojosemastucci/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar = 1711456463188
+/Users/franciscojosemastucci/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.3/jaxb-runtime-4.0.3.jar = 1711456462600
+/Users/franciscojosemastucci/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.3/jaxb-core-4.0.3.jar = 1711456462578
+/Users/franciscojosemastucci/.m2/repository/org/glassfish/jaxb/txw2/4.0.3/txw2-4.0.3.jar = 1711456462653
+/Users/franciscojosemastucci/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar = 1711456462682
+/Users/franciscojosemastucci/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar = 1711456464364
+/Users/franciscojosemastucci/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar = 1711456462477
+/Users/franciscojosemastucci/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar = 1711456462533
+/Users/franciscojosemastucci/.m2/repository/io/micrometer/micrometer-registry-dynatrace/1.11.4/micrometer-registry-dynatrace-1.11.4.jar = 1711457296855
+/Users/franciscojosemastucci/.m2/repository/commons-io/commons-io/2.13.0/commons-io-2.13.0.jar = 1711457296894
+/Users/franciscojosemastucci/.m2/repository/org/springframework/boot/spring-boot-configuration-processor/3.1.4/spring-boot-configuration-processor-3.1.4.jar = 1711457296913
+/Users/franciscojosemastucci/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.2/jackson-datatype-jsr310-2.15.2.jar = 1711456462209
+/Users/franciscojosemastucci/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar = 1711457296937
+/Users/franciscojosemastucci/.m2/repository/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar = 1711457297080
+/Users/franciscojosemastucci/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar = 1711456475726
+/Users/franciscojosemastucci/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar = 1711456475744
+/Users/franciscojosemastucci/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar = 1711456475358
+/Users/franciscojosemastucci/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar = 1711457296975
+/Users/franciscojosemastucci/.m2/repository/io/netty/netty-handler/4.1.100.Final/netty-handler-4.1.100.Final.jar = 1711457297009
+/Users/franciscojosemastucci/.m2/repository/io/netty/netty-common/4.1.97.Final/netty-common-4.1.97.Final.jar = 1711457297027
+/Users/franciscojosemastucci/.m2/repository/io/netty/netty-resolver/4.1.97.Final/netty-resolver-4.1.97.Final.jar = 1711457297021
+/Users/franciscojosemastucci/.m2/repository/io/netty/netty-buffer/4.1.97.Final/netty-buffer-4.1.97.Final.jar = 1711457297079
+/Users/franciscojosemastucci/.m2/repository/io/netty/netty-transport/4.1.97.Final/netty-transport-4.1.97.Final.jar = 1711457297094
+/Users/franciscojosemastucci/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.97.Final/netty-transport-native-unix-common-4.1.97.Final.jar = 1711457297126
+/Users/franciscojosemastucci/.m2/repository/io/netty/netty-codec/4.1.97.Final/netty-codec-4.1.97.Final.jar = 1711457297136
+/Users/franciscojosemastucci/.m2/repository/org/bouncycastle/bcprov-jdk18on/1.76/bcprov-jdk18on-1.76.jar = 1711457297377
+/Users/franciscojosemastucci/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar = 1711456464390
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/src/main/java = 1701346956814
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/generated-sources/annotations = 1711457553915
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/constant-values.html = 1711457559668
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/tag-search-index.js = 1711457559830
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/overview-tree.html = 1711457559803
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/module-search-index.js = 1711457559828
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/index.html = 1711457559807
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/package-search-index.js = 1711457559829
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/jquery-ui.overrides.css = 1711457559869
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/serialized-form.html = 1711457559685
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/index-all.html = 1711457559860
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/allpackages-index.html = 1711457559828
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/member-search-index.js = 1711457559829
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/script.js = 1711457559865
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/stylesheet.css = 1711457559865
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/overview-summary.html = 1711457559861
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/help-doc.html = 1711457559863
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/element-list = 1711457559572
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/allclasses-index.html = 1711457559826
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/type-search-index.js = 1711457559829
+/Users/franciscojosemastucci/Desktop/Santander/c_center/representatives/target/apidocs/search.js = 1711457559866
