@@ -3,7 +3,6 @@ package com.santander.consumer.westernhub.customer.service.clients.impl;
 
 import com.santander.ademma.common.model.dto.context.ExecutionContext;
 
-import com.santander.consumer.westernhub.customer.client.RepresentativeAS400;
 import com.santander.consumer.westernhub.customer.model.dto.RepresentativeInDTO;
 import com.santander.consumer.westernhub.customer.model.dto.out.ListRepresentativeOut;
 import com.santander.consumer.westernhub.customer.service.clients.RepresentativeService;

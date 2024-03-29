@@ -19,6 +19,7 @@ import org.springframework.stereotype.Component;
 public class RepresentativeConfig {
 
 
+
     /** The representativeEndpoint. */
     private String representativeEndpoint;
 

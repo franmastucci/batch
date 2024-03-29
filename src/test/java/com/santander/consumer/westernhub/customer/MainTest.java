@@ -12,7 +12,7 @@ class MainTest {
      */
     @Test
     void test() {
-        RepresentativesApplication.main(new String[] {});
+        CodificationDataApplication.main(new String[] {});
 
     }
 

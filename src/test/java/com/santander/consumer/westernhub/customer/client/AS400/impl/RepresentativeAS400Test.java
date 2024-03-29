@@ -3,7 +3,6 @@ package com.santander.consumer.westernhub.customer.client.AS400.impl;
 import com.santander.ademma.common.exception.RetryException;
 import com.santander.ademma.common.model.dto.context.ExecutionContext;
 
-import com.santander.consumer.westernhub.customer.client.RepresentativeAS400;
 import com.santander.consumer.westernhub.customer.config.RepresentativeConfig;
 import com.santander.consumer.westernhub.customer.model.dto.RepresentativeInDTO;
 import com.santander.consumer.westernhub.customer.utils.TestUtils;
