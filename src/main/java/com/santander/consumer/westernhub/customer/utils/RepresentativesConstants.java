@@ -17,17 +17,10 @@ public class RepresentativesConstants {
     /** The Constant REQUEST_MAPPING_PATH_REPRESENTATIVES. */
     public static final String REQUEST_MAPPING_PATH_REPRESENTATIVES = CUSTOMERS_PATH + "/representatives";
 
-    /** The Constant REPRESENTATIVES_INPUT_DATE_FORMAT. */
-    public static final String REPRESENTATIVES_INPUT_DATE_FORMAT = "yyyyMMdd";
-
-    /** The Constant OUTPUT_DATE_FORMAT. */
-    public static final String OUTPUT_DATE_FORMAT = "yyyy-MM-dd";
 
     /** The Constant X-SANTANDER-SOCIETY. */
     public static final String X_SANTANDER_SOCIETY = "x_santander_society";
 
-    /** The Constant DOCUMEMNT_ID. */
-    public static final String DOCUMEMNT_ID = "documentId";
 
     /** The Constant X-SANTANDER-SOCIETY. */
     public static final String X_SANTANDER_OFFICE = "x_santander_office";
@@ -35,58 +28,13 @@ public class RepresentativesConstants {
     /** The Constant X-SANTANDER-AREA. */
     public static final String X_SANTANDER_AREA = "x_santander_area";
 
-    /** The Constant ERROR_GENERICO. */
-    public static final String ERROR_GENERICO = "An error has occurred, please try again later";
-
-    //API responseCodes
-    /** The Constant HTTP_CODE_OK. */
-    public static final String HTTP_CODE_OK =  "200";
-
-    /** The Constant HTTP_CODE_NOT_FOUND. */
-    public static final String HTTP_CODE_NOT_FOUND =  "404";
-
-    /** The Constant HTTP_CODE_BAD_REQUEST. */
-    public static final String HTTP_CODE_BAD_REQUEST =  "400";
-
-    /** The Constant HTTP_CODE_UNAUTHORIZED. */
-    public static final String HTTP_CODE_UNAUTHORIZED =  "401";
-
-    /** The Constant HTTP_CODE_FORBIDDEN. */
-    public static final String HTTP_CODE_FORBIDDEN = "403";
-
-    /** The Constant HTTP_CODE_UNPROCESSABLE_ENTITY. */
-    public static final String HTTP_CODE_UNPROCESSABLE_ENTITY = "422";
-
-    /** The Constant HTTP_CODE_TOO_MANY_REQUESTS. */
-    public static final String HTTP_CODE_TOO_MANY_REQUESTS = "429";
-
-    /** The Constant HTTP_CODE_INTERNAL_SERVER_ERROR. */
-    public static final String HTTP_CODE_INTERNAL_SERVER_ERROR = "500";
-
-    /** The Constant HTTP_CODE_SERVICE_UNAVAILABLE. */
-    public static final String HTTP_CODE_SERVICE_UNAVAILABLE =  "503";
-
-    /** The Constant HTTP_CODE_NO_CONTENT. */
-    public static final String HTTP_CODE_NO_CONTENT = "204";
-
-    /** The Constant RETRY. */
-    public static final String RETRY = "RETRY";
-
-    /** The Constant GET_REPRESENTATIVES_INFO. */
-    public static final String GET_REPRESENTATIVES_INFO = "getRepresentatives";
-
-
-    /** The Constant getJsonError500AS400. */
-    public static final String GETJSONERROR500AS400 = """
-                   {
-                "errors": [{
-                     "code": "0000500",
-                     "message": "DESCR-ERROR",
-                     "level": "ERROR",
-                     "description": "DESCR-ERROR"
-                   }]
-                }
-                """;
-
+    public static String JDBC_URL = "jdbc:postgresql://cwed1airrdaoptlccgene001.cluster-cdui04e4qtuy.eu-west-1.rds.amazonaws.com:5432/CWED1AIRRDAOPTLCCGENE001_DDB01";
+    public static String USER = "postgres";
+    public static String PASS = "M30-uS5-?Uw0Nr4q*SYG%";
+    public static String NA = "N/A";
+    public static String AUD_USR_CREATION = "Historico";
+    public static String DATE_TIME_PATTERN = "yyyy-MM-dd HH:mm:ss";
+    public static String DATE_PATTERN = "MM/dd/yyyy";
+    public static String TIME_PATTERN = "HH:mm:ss";
 
 }
