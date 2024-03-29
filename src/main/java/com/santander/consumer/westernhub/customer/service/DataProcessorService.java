@@ -13,8 +13,8 @@ public interface DataProcessorService {
 	 * @return response message
 	 */
 
-		String retrieveCsvDataFromS3();
+		String retrieveCsvFilesFromS3();
 
-		void insertCsvDataIntoDB(String csvPath);
+		void insertDataIntoDB(String csvPath);
 
 	}

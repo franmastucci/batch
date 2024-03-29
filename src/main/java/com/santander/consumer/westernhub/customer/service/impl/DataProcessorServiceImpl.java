@@ -4,7 +4,6 @@ import com.santander.consumer.westernhub.customer.service.CodificationDataServic
 import com.santander.consumer.westernhub.customer.service.DataProcessorService;
 import com.santander.consumer.westernhub.customer.service.IvrCodificationDataService;
 import com.santander.consumer.westernhub.customer.service.ServicesUtils;
-import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,13 +32,13 @@ public class DataProcessorServiceImpl implements DataProcessorService {
 
 
 	@Override
-	public String retrieveCsvDataFromS3() {
+	public String retrieveCsvFilesFromS3() {
 		String csvFilePath = "historico_codificacion_pre3.csv";
 		return servicesUtils.getFullPath(csvFilePath);
 	}
 
 	@Override
-	public void insertCsvDataIntoDB(String csvFilePath) {
+	public void insertDataIntoDB(String csvFilePath) {
 
 		var codificationLists = servicesUtils.codificationListsBuilder();
 		servicesUtils.loadMapping();

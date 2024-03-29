@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.FileSystems;
@@ -19,7 +18,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-import static com.santander.consumer.westernhub.customer.utils.RepresentativesConstants.*;
+import static com.santander.consumer.westernhub.customer.utils.CodificationDataConstants.*;
 
 @Service
 @Slf4j
@@ -59,13 +58,76 @@ public class ServicesUtils {
             var tarea = data[14].trim().concat(".").concat(data[15].trim());
             var subtarea = data[15].trim().concat(".").concat(data[16].trim());
 
-            //consturye el objeto codification
-            codificationLists.getCodificationList().add(buildCodification(data,
-                    tipoMapping.getOrDefault(tipo, -1),
-                    tareaMapping.getOrDefault(tarea, -1),
-                    subtareaMapping.getOrDefault(subtarea, -1)));
+            codificationLists.getCodificationList().add(buildCodification(data, tipoMapping.getOrDefault(tipo, -1),
+                    tareaMapping.getOrDefault(tarea, -1), subtareaMapping.getOrDefault(subtarea, -1)));
         }
 
+    }
+
+    private Map<String, Integer> loadMapping(String fileName) {
+        var mapping = new HashMap<String,Integer>();
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length == 2) {
+                    String value = parts[1].trim();
+                    var code = Integer.parseInt(parts[0].trim());
+                    mapping.put(value, code);
+                }
+            }
+        } catch (IOException | NumberFormatException e) {
+            e.printStackTrace();
+        }
+        return mapping;
+    }
+
+    public void loadMapping() {
+        tipoMapping = loadMapping(this.getFullPath(tipoFileName));
+        tareaMapping = loadMapping(this.getFullPath(tareaFileName));
+        subtareaMapping = loadMapping(this.getFullPath(subtareaFileName));
+    }
+
+    public  String getFullPath(String relativePath) {
+        Path path = FileSystems.getDefault().getPath(basePath, relativePath);
+        return path.toAbsolutePath().toString();
+    }
+
+    private boolean checkIfRecordExists(List<String> idGrabacionList, String idGrabacion) {
+        return idGrabacionList.contains(idGrabacion);
+    }
+
+    private Timestamp getTimestamp() {
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_TIME_PATTERN);
+        String formattedTimestamp = now.format(formatter);
+        return Timestamp.valueOf(formattedTimestamp);
+    }
+
+    private Timestamp combineDateTime(String dateString, String timeString) {
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_PATTERN);
+            SimpleDateFormat timeFormat = new SimpleDateFormat(TIME_PATTERN);
+
+            Date parsedDate = dateFormat.parse(dateString);
+            Date parsedTime = timeFormat.parse(timeString);
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(parsedDate);
+
+            Calendar timeCalendar = Calendar.getInstance();
+            timeCalendar.setTime(parsedTime);
+
+            calendar.set(Calendar.HOUR_OF_DAY, timeCalendar.get(Calendar.HOUR_OF_DAY));
+            calendar.set(Calendar.MINUTE, timeCalendar.get(Calendar.MINUTE));
+            calendar.set(Calendar.SECOND, timeCalendar.get(Calendar.SECOND));
+            calendar.set(Calendar.MILLISECOND, 0);
+
+            return new Timestamp(calendar.getTimeInMillis());
+        } catch (java.text.ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public Codification buildCodification(String[] data, int tipoCode, int tareaCode, int subtareaCode) {
@@ -108,101 +170,11 @@ public class ServicesUtils {
     }
 
     public CodificationLists codificationListsBuilder() {
-    return CodificationLists.builder()
+        return CodificationLists.builder()
                 .idGrabacionList(new ArrayList<>())
                 .codificationList(new ArrayList<>())
                 .ivrCodificationList(new ArrayList<>())
                 .build();
-    }
-
-    private Timestamp getTimestamp() {
-        LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_TIME_PATTERN);
-        String formattedTimestamp = now.format(formatter);
-        return Timestamp.valueOf(formattedTimestamp);
-    }
-
-    public  String getFullPath(String relativePath) {
-        Path path = FileSystems.getDefault().getPath(basePath, relativePath);
-        return path.toAbsolutePath().toString();
-    }
-
-    private Timestamp combineDateTime(String dateString, String timeString) {
-        try {
-            SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_PATTERN);
-            SimpleDateFormat timeFormat = new SimpleDateFormat(TIME_PATTERN);
-
-            Date parsedDate = dateFormat.parse(dateString);
-            Date parsedTime = timeFormat.parse(timeString);
-
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(parsedDate);
-
-            Calendar timeCalendar = Calendar.getInstance();
-            timeCalendar.setTime(parsedTime);
-
-            // Establecer la hora, minuto y segundo de la fecha
-            calendar.set(Calendar.HOUR_OF_DAY, timeCalendar.get(Calendar.HOUR_OF_DAY));
-            calendar.set(Calendar.MINUTE, timeCalendar.get(Calendar.MINUTE));
-            calendar.set(Calendar.SECOND, timeCalendar.get(Calendar.SECOND));
-            calendar.set(Calendar.MILLISECOND, 0);
-
-            return new Timestamp(calendar.getTimeInMillis());
-        } catch (java.text.ParseException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    private boolean checkIfRecordExists(List<String> idGrabacionList, String idGrabacion) {
-        return idGrabacionList.contains(idGrabacion);
-    }
-
-    public void loadMapping() {
-        tipoMapping = loadMapping(this.getFullPath(tipoFileName));
-        tareaMapping = loadMapping(this.getFullPath(tareaFileName));
-        subtareaMapping = loadMapping(this.getFullPath(subtareaFileName));
-    }
-
-    private Map<String, Integer> loadMapping(String fileName) {
-        var mapping = new HashMap<String,Integer>();
-        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] parts = line.split(",");
-                if (parts.length == 2) {
-                    String value = parts[1].trim();
-                    var code = Integer.parseInt(parts[0].trim());
-                    mapping.put(value, code);
-                }
-            }
-        } catch (IOException | NumberFormatException e) {
-            e.printStackTrace();
-        }
-        return mapping;
-    }
-
-    private String buildIvrCodificacionValues(String[] data) {
-        return String.format("('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')",
-                data[6].trim(), data[4].trim(), data[5].trim(), NA, NA, NA, AUD_USR_CREATION, getTimestamp());
-    }
-
-    private String buildCodificacionValues(String[] data, int tipoCode, int tareaCode, int subtareaCode) {
-        return String.format("('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %d, %d, %d, '%s', %d, '%s', '%s', '%s')",
-                data[0].trim(), data[2].trim(), data[3].trim(), data[6].trim(),
-                combineDateTime(data[7].trim(), data[8].trim()), combineDateTime(data[7].trim(), data[8].trim()),
-                combineDateTime(data[9].trim(), data[10].trim()), combineDateTime(data[9].trim(), data[10].trim()),
-                data[13].trim(), tipoCode, tareaCode, subtareaCode, NA, 6, NA, AUD_USR_CREATION, getTimestamp());
-    }
-
-    private String getNewFilePath(String existingFilePath) {
-        int fileCount = 2;
-        String newFilePath = existingFilePath.replace("_1.sql", "_" + fileCount + ".sql");
-        while (new File(newFilePath).exists()) {
-            fileCount++;
-            newFilePath = existingFilePath.replace("_1.sql", "_" + fileCount + ".sql");
-        }
-        return newFilePath;
     }
 
 }

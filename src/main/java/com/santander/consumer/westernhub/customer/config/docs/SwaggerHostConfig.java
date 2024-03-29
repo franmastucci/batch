@@ -45,13 +45,12 @@ public class SwaggerHostConfig {
                                 )
                 )
                 .info(new Info()
-                        .title("Representatives")
+                        .title("Codification Data")
                         .version(version)
-                        .description("API to search for data related to Representatives of a Dealer operation")
+                        .description("API to retrieve and persist data related to Codifications")
                         .license(new License().name("Apache 2.0").url("http://www.apache.org/licenses/LICENSE-2.0.html"))
                 );
+
     }
-
-
 
 }

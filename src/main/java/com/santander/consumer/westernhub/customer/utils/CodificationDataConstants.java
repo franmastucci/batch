@@ -8,14 +8,15 @@ import lombok.NoArgsConstructor;
  *
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class RepresentativesConstants {
+public class CodificationDataConstants {
 
 
     /** The Constant CUSTOMERS_PATH. */
-    public static final String CUSTOMERS_PATH = "/customers";
+    public static final String CODIFICATION_DATA_PATH = "/codification-data/v0";
+
 
     /** The Constant REQUEST_MAPPING_PATH_REPRESENTATIVES. */
-    public static final String REQUEST_MAPPING_PATH_REPRESENTATIVES = CUSTOMERS_PATH + "/representatives";
+    public static final String REQUEST_MAPPING_PATH_CODIFICATION = CODIFICATION_DATA_PATH + "/codification";
 
 
     /** The Constant X-SANTANDER-SOCIETY. */

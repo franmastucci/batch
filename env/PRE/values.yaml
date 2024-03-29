@@ -1,16 +1,16 @@
 image:
-  repository: 518822549288.dkr.ecr.eu-west-1.amazonaws.com/cwei1airecrportalgene001/ms-spb-wh-representatives
+  repository: 518822549288.dkr.ecr.eu-west-1.amazonaws.com/cwei1airecrportalgene001/ms-spb-wh-codification-data
   tag: 0.0.1
 
-microservice: ms-spb-wh-representatives
+microservice: ms-spb-wh-codification-data
 namespace: generaltables
-path: /ms-spb-wh-representatives
+path: /ms-spb-wh-codification-data
 hostname: portal.sceu.pre.corp
 secret_name: portal.sceu.pre.corp
 https: true
 port: 8443
 configurationFiles:
-  - name: ms-spb-wh-representatives-config-map
+  - name: ms-spb-wh-codification-data-config-map
     data: |-
       CLOUD_CONFIGURI: "http://ademma-config-server.globalsecurity"
       URL_COMMON: "https://portal.sceu.pre.corp"
@@ -18,9 +18,9 @@ configurationFiles:
       SSL_KEYSTORE: file:/var/keystore/keystore.p12
       URL_JWK_SET_URI: "https://ademma-authorization-server.globalsecurity/ademma-authorization-server/oauth2/jwks"
       SERVER_PORT: "8443"
-      CONFIG_URL_SPRINGDOC: "https://portal.sceu.pre.corp/ms-spb-wh-representatives/v3/api-docs"
+      CONFIG_URL_SPRINGDOC: "https://portal.sceu.pre.corp/ms-spb-wh-codification-data/v3/api-docs"
       SPRINGDOC_URL: "/v3/api-docs/swagger-config"
-      HOST_PATH: "/ms-spb-wh-representatives"
+      HOST_PATH: "/ms-spb-wh-codification-data"
       APP_VERSION: "SNAPSHOT-0.0.1"
       LOGGING_LEVEL_ROOT: "INFO"
       LOGGING_LEVEL_APPLICATION: "INFO"

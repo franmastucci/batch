@@ -7,7 +7,7 @@ import com.santander.consumer.westernhub.customer.model.dto.out.ListRepresentati
 import com.santander.consumer.westernhub.customer.model.dto.out.Representative;
 import com.santander.consumer.westernhub.customer.model.dto.out.error.ErrorMessageDTO;
 import com.santander.consumer.westernhub.customer.service.clients.RepresentativeService;
-import com.santander.consumer.westernhub.customer.utils.RepresentativesConstants;
+import com.santander.consumer.westernhub.customer.utils.CodificationDataConstants;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -64,12 +64,12 @@ class RepresentativeControllerTest {
                 any(RepresentativeInDTO.class)
         )).thenReturn(null);
 
-        mockMvc.perform(get(RepresentativesConstants.REQUEST_MAPPING_PATH_REPRESENTATIVES+"?documentType=L&operationId=E12F20230148228")
+        mockMvc.perform(get(CodificationDataConstants.REQUEST_MAPPING_PATH_REPRESENTATIVES+"?documentType=L&operationId=E12F20230148228")
                         .contentType(MediaType.APPLICATION_JSON)
                         .header(AUTHORIZATION, AUTHORIZATION)
-                        .header("x-santander-society", RepresentativesConstants.X_SANTANDER_SOCIETY)
-                        .header("x-santander-office", RepresentativesConstants.X_SANTANDER_OFFICE)
-                        .header("x-santander-area", RepresentativesConstants.X_SANTANDER_AREA)
+                        .header("x-santander-society", CodificationDataConstants.X_SANTANDER_SOCIETY)
+                        .header("x-santander-office", CodificationDataConstants.X_SANTANDER_OFFICE)
+                        .header("x-santander-area", CodificationDataConstants.X_SANTANDER_AREA)
                         .header("documentId", "E12F20230148228"))
                 .andExpect(status().isNoContent());
 
@@ -93,12 +93,12 @@ class RepresentativeControllerTest {
                 any(RepresentativeInDTO.class)
         )).thenReturn(new ListRepresentativeOut(repList, errors));
 
-        mockMvc.perform(get(RepresentativesConstants.REQUEST_MAPPING_PATH_REPRESENTATIVES+"?documentType=L&operationId=E12F20230148228")
+        mockMvc.perform(get(CodificationDataConstants.REQUEST_MAPPING_PATH_REPRESENTATIVES+"?documentType=L&operationId=E12F20230148228")
                         .contentType(MediaType.APPLICATION_JSON)
                         .header(AUTHORIZATION, AUTHORIZATION)
-                        .header("x-santander-society", RepresentativesConstants.X_SANTANDER_SOCIETY)
-                        .header("x-santander-office", RepresentativesConstants.X_SANTANDER_OFFICE)
-                        .header("x-santander-area", RepresentativesConstants.X_SANTANDER_AREA)
+                        .header("x-santander-society", CodificationDataConstants.X_SANTANDER_SOCIETY)
+                        .header("x-santander-office", CodificationDataConstants.X_SANTANDER_OFFICE)
+                        .header("x-santander-area", CodificationDataConstants.X_SANTANDER_AREA)
                         .header("documentId", "E12F20230148228"))
                 .andExpect(status().isOk());
     }

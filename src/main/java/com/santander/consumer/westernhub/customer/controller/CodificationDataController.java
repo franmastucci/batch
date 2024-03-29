@@ -16,7 +16,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import static com.santander.consumer.westernhub.customer.utils.CodificationDataConstants.REQUEST_MAPPING_PATH_CODIFICATION;
+
+
 @RestController
+@RequestMapping(REQUEST_MAPPING_PATH_CODIFICATION)
 @Tag(name = "Codification Data", description = "Calls to retriever and inserter codification sewrvices")
 @Slf4j
 public class CodificationDataController {
@@ -51,7 +55,7 @@ public class CodificationDataController {
 				content = @Content(mediaType = "application/json", schema = @Schema(implementation = ListRestError.class))),
 			@ApiResponse(responseCode = "" + CommonConstants.HTTP_CODE_SERVICE_UNAVAILABLE, description = "Database Unavailable",
 				content = @Content(mediaType = "application/json", schema = @Schema(implementation = ListRestError.class)))	})
-	@PostMapping("/codification")
+	@PostMapping()
 	@ResponseBody
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<String> insertCodificationData(
@@ -82,9 +86,9 @@ public class CodificationDataController {
 			
 	{
 
-		var response = dataProcessorService.retrieveCsvDataFromS3();
+		var response = dataProcessorService.retrieveCsvFilesFromS3();
 
-		if(!response.isEmpty()) dataProcessorService.insertCsvDataIntoDB(response);
+		if(!response.isEmpty()) dataProcessorService.insertDataIntoDB(response);
 		else {
 			log.info("no data found");
 			return ResponseEntity.noContent().build();
