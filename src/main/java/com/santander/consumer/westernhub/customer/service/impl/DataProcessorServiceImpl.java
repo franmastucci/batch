@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -32,26 +34,30 @@ public class DataProcessorServiceImpl implements DataProcessorService {
 
 
 	@Override
-	public String retrieveCsvFilesFromS3() {
+	public List<String> retrieveCsvFilesFromS3() {
 		String csvFilePath = "historico_codificacion_pre3.csv";
-		return servicesUtils.getFullPath(csvFilePath);
+		var responseList = new ArrayList<String>();
+		responseList.add(servicesUtils.getFullPath(csvFilePath));
+		return responseList;
 	}
 
 	@Override
-	public void insertDataIntoDB(String csvFilePath) {
+	public void insertDataIntoDB(List<String> csvFilePathList) {
 
 		var codificationLists = servicesUtils.codificationListsBuilder();
 		servicesUtils.loadMapping();
 
-		try (BufferedReader reader = new BufferedReader(new FileReader(csvFilePath))) {
-			reader.readLine();
-			servicesUtils.buildListsToInsert(reader, codificationLists);
-			ivrCodificationDataService.insertIvrCodificationData(codificationLists.getIvrCodificationList());
-			codificationDataService.insertCodificationData(codificationLists.getCodificationList());
+		csvFilePathList.forEach(f -> {
+			try (BufferedReader reader = new BufferedReader(new FileReader(f))) {
+				reader.readLine();
+				servicesUtils.buildListsToInsert(reader, codificationLists);
+				ivrCodificationDataService.insertIvrCodificationData(codificationLists.getIvrCodificationList());
+				codificationDataService.insertCodificationData(codificationLists.getCodificationList());
 
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		});
 
 	}
 

@@ -21,7 +21,7 @@ import static com.santander.consumer.westernhub.customer.utils.CodificationDataC
 
 @RestController
 @RequestMapping(REQUEST_MAPPING_PATH_CODIFICATION)
-@Tag(name = "Codification Data", description = "Calls to retriever and inserter codification sewrvices")
+@Tag(name = "Codification Data", description = "Calls to retrieve and insert codification services")
 @Slf4j
 public class CodificationDataController {
 
@@ -58,7 +58,7 @@ public class CodificationDataController {
 	@PostMapping()
 	@ResponseBody
 	@ResponseStatus(HttpStatus.OK)
-	public ResponseEntity<String> insertCodificationData(
+	public ResponseEntity<String> processCodificationData(
 			//@Parameter(hidden = true) WebRequest request,
 			@Parameter(hidden = true)
 			@RequestBody String input,
@@ -85,17 +85,16 @@ public class CodificationDataController {
 			 */
 			
 	{
-
 		var response = dataProcessorService.retrieveCsvFilesFromS3();
 
-		if(!response.isEmpty()) dataProcessorService.insertDataIntoDB(response);
+		if(!response.isEmpty())
+			dataProcessorService.insertDataIntoDB(response);
 		else {
 			log.info("no data found");
 			return ResponseEntity.noContent().build();
 		}
 
 		return ResponseEntity.ok().body("ok");
-
 	}
 
 }

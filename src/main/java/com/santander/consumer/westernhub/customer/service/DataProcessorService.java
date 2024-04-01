@@ -1,6 +1,8 @@
 package com.santander.consumer.westernhub.customer.service;
 
 
+import java.util.List;
+
 /**
  * DataProcessorService interface
  *
@@ -9,12 +11,16 @@ package com.santander.consumer.westernhub.customer.service;
 public interface DataProcessorService {
 
 	/**
-	 * Get a list of Request
+	 * Get a list of cvs file paths
 	 * @return response message
 	 */
 
-		String retrieveCsvFilesFromS3();
+	List<String> retrieveCsvFilesFromS3();
 
-		void insertDataIntoDB(String csvPath);
+	/**
+	 * Insert a list of cvs file data objects
+	 */
 
-	}
+	void insertDataIntoDB(List<String> csvPathList);
+
+}
